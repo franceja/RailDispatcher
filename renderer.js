@@ -1,25 +1,48 @@
-const 
-ipc = require('electron').ipcRenderer,
-// syncBtn  = document.getElementById('syncBtn'),
-// asyncBtn = document.getElementById('asyncBtn');
-closeBtn = document.getElementById('close');
+const ipc = require('electron').ipcRenderer
 
-let replyDiv = document.getElementById('reply');
+const closeBtn = document.getElementById('close');
+const updateBtn = document.getElementById('update');
+const startSim = document.getElementById('simStart');
 
-closeBtn.addEventListener('click', () => {
-    ipc.send('aSynMessage','close')
-});
+const updateCloseBtn = document.getElementById('updateClose');
 
-// syncBtn.addEventListener('click', () => {
-//   let 
-//   reply = ipc.sendSync('synMessage','A sync message to main');
-//   replyDiv.innerHTML = reply;
+const submitSimBtn = document.getElementById('submitSim');
+const closeSimBtn = document.getElementById('closeSim');
+
+
+//let replyDiv = document.getElementById('reply');
+if(closeBtn != null || updateBtn != null || startSim != null){
+    closeBtn.addEventListener('click', () => {
+        ipc.send('aSynMessage','close')
+    });
+
+    updateBtn.addEventListener('click', () => {
+        ipc.send('aSynMessage','update')
+    });
+
+    startSim.addEventListener('click', () => {
+        ipc.send('aSynMessage','startSim')
+    });
+
+}
+
+if(updateCloseBtn != null){
+    updateCloseBtn.addEventListener('click', () => {
+        ipc.send('aSynMessage','updateClose')
+    });
+}
+
+if(submitSimBtn != null || closeSimBtn != null){
+    submitSimBtn.addEventListener('click', () => {
+        ipc.send('aSynMessage','submitSim')
+    });
+
+    closeSimBtn.addEventListener('click', () => {
+        ipc.send('aSynMessage','closeSim')
+    });
+
+}
+
+// ipc.on('asynReply', (event, args) => {
+//   replyDiv.innerHTML = args;
 // });
-
-// asyncBtn.addEventListener('click', () => {
-//   ipc.send('aSynMessage','A async message to main')
-// });
-
-ipc.on('asynReply', (event, args) => {
-  replyDiv.innerHTML = args;
-});
