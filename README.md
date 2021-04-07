@@ -1,3 +1,5 @@
+<img src="src/img/cover.png" width="100%">
+
 # RailDispatcher
 Train signalling simulation for Thai and its environment modern railway signalling system.
 
