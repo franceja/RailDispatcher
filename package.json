@@ -1,16 +1,18 @@
 {
   "name": "RailDispatcher",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "Train signalling simulation for Thai and its environment modern railway signalling system.",
   "main": "main.js",
+  "bin": "bin.js",
   "scripts": {
     "start": "electron ."
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "electron": "^12.0.2",
+    "electron-builder": "^22.10.5",
     "electron-packager": "^15.2.0"
   },
   "dependencies": {
