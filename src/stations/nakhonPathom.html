@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body style="background: rgb(0, 0, 0); " width="100%">
+    <div class="container-fluid mb-2 bg-secondary">
+        <div class="row">
+            <div class="col-4 col-sm-4 col-md-4 col-lg-4 text-left p-0">
+                <button class="btn btn-xl btn-danger">00:00:00</button>
+                <button class="btn btn-xl btn-secondary"></button>
+                
+            </div>
+            <div class="col-4 col-sm-4 col-md-4 col-lg-4 text-center text-white" style="-webkit-app-region: drag;">
+                <h5 class="mt-1">Nakhon Pathom Station</h5>
+            </div>
+            <div class="col-4 col-sm-4 col-md-4 col-lg-4 text-left text-right p-0">
+                <button id="closeMap" class="btn btn-xl btn-danger">CLOSE</button>
+            </div>
+        </div>
+    </div>
+    
+    <div class="container-fluid">
+        <svg id="main" width="1200" height="400" xmlns="https://www.w3.org/2000/svg">
+
+            <path d="M 0 180 L 98 180" stroke-width="8" stroke="grey"></path>
+            <path d="M 0 220 L 98 220" stroke-width="8" stroke="grey"></path>
+            
+            <path stroke-width="8" stroke="grey" d="M 100 180 L 298 180"></path>
+            <path stroke-width="8" stroke="grey" d="M 100 220 L 358 220"></path>
+            
+            <path stroke-width="8" stroke="grey" d="M 130 220 L 170 180"></path>
+            <path d="M 190 180 L 240 220" stroke-width="8" stroke="grey"></path> 
+            
+            <path d="M 260 220 L 298 260" stroke-width="8" stroke="grey"></path>
+            
+            <path d="M 296 180 L 362 140" stroke-width="8" stroke="grey"></path>
+            <path d="M 140 220 L 358 220" stroke-width="8" stroke="grey"></path>
+            <path d="M 296 260 L 358 260" stroke-width="8" stroke="grey"></path>
+            
+            <path d="M 360 140 L 458 140" stroke-width="8" stroke="grey"></path>
+            <path d="M 360 220 L 458 220" stroke-width="8" stroke="grey"></path>
+            <path d="M 360 260 L 458 260" stroke-width="8" stroke="grey"></path>
+            
+            <path d="M 460 60 L 558 60" stroke-width="8" stroke="grey"></path>
+            <path d="M 460 100 L 558 100" stroke-width="8" stroke="grey"></path>
+            <path d="M 460 140 L 558 140" stroke-width="8" stroke="grey"></path>
+            <path d="M 460 220 L 620 220" stroke-width="8" stroke="grey"></path>
+            <path d="M 460 260 L 620 260" stroke-width="8" stroke="grey"></path>
+            <path d="M 520 260 L 560 220" stroke-width="8" stroke="grey"></path>
+
+            <path d="M 620 220 L 714 220" stroke-width="8" stroke="grey"></path>
+            
+            <path d="M 560 60 L 600 60" stroke-width="8" stroke="grey"></path>
+            <path d="M 598 60 L 638 100" stroke-width="8" stroke="grey"></path>
+            
+            <path d="M 560 100 L 660 100" stroke-width="8" stroke="grey"></path>
+            <path d="M 658 100 L 698 140" stroke-width="8" stroke="grey"></path>
+            <path d="M 560 140 L 658 140" stroke-width="8" stroke="grey"></path>
+
+            <path d="M 618 220 L 658 180" stroke-width="8" stroke="grey"></path>
+            <path d="M 678 220 L 718 260" stroke-width="8" stroke="grey"></path>
+
+            <path d="M 660 140 L 798 140" stroke-width="8" stroke="grey"></path>
+            <path d="M 656 180 L 798 180" stroke-width="8" stroke="grey"></path>
+            <path d="M 716 220 L 798 220" stroke-width="8" stroke="grey"></path>
+            <path d="M 716 260 L 798 260" stroke-width="8" stroke="grey"></path>
+
+            <path d="M 800 140 L 898 140" stroke-width="8" stroke="grey"></path>
+            <path d="M 800 180 L 898 180" stroke-width="8" stroke="grey"></path>
+            <path d="M 800 220 L 898 220" stroke-width="8" stroke="grey"></path>
+            <path d="M 800 260 L 898 260" stroke-width="8" stroke="grey"></path>
+
+            <path d="M 900 260 L 998 260" stroke-width="8" stroke="grey"></path>
+            <path d="M 920 260 L 960 220" stroke-width="8" stroke="grey"></path>
+
+            <path d="M 980 220 L 1020 180" stroke-width="8" stroke="grey"></path>
+            <path d="M 900 220 L 983 220" stroke-width="8" stroke="grey"></path>
+            <path d="M 900 180 L 998 180" stroke-width="8" stroke="grey"></path>
+            <path d="M 900 140 L 998 140" stroke-width="8" stroke="grey"></path>
+            <path d="M 900 140 L 998 140" stroke-width="8" stroke="grey"></path>
+            <path stroke-width="8" stroke="grey" d="M 800 140 L 1098 140"></path>
+            <path d="M 1100 140 L 1198 140" stroke-width="8" stroke="grey"></path>
+
+            <path d="M 1040 180 L 1080 140" stroke-width="8" stroke="grey"></path>
+            <path stroke-width="8" stroke="grey" d="M 800 180 L 1044 180"></path>
+
+            <path d="M 980 220 L 1020 180" stroke-width="8" stroke="grey"></path>
+
+            <path d="M 798 100 L 898 100" stroke-width="8" stroke="grey"></path>
+            <path d="M 900 100 L 998 100" stroke-width="8" stroke="grey"></path>
+            <path d="M 760 140 L 800 100" stroke-width="8" stroke="grey"></path>
+            <path d="M 996 100 L 1040 140" stroke-width="8" stroke="grey"></path>
+
+            <!-- LEVEL CROSSING -->
+            <text x="545" y="15" fill="cyan">CROSSING</text>
+            <path d="M 580 28 L 580 52" stroke-width="12" stroke="cyan"></path>
+            <path d="M 580 68 L 580 92" stroke-width="12" stroke="cyan"></path>
+            <path d="M 580 108 L 580 132" stroke-width="12" stroke="cyan"></path>
+            <path d="M 580 148 L 580 212" stroke-width="12" stroke="cyan"></path>
+            <path d="M 580 228 L 580 242" stroke-width="12" stroke="cyan"></path>
+
+            <text x="215" y="140" fill="cyan">CROSSING</text>
+            <path d="M 250 150 L 250 172" stroke-width="12" stroke="cyan"></path>
+            <path d="M 250 188 L 250 212" stroke-width="12" stroke="cyan"></path>
+            <path d="M 250 228 L 250 250" stroke-width="12" stroke="cyan"></path>
+
+            <text x="90" y="140" fill="cyan">CROSSING</text>
+            <path d="M 120 150 L 120 172" stroke-width="12" stroke="cyan"></path>
+            <path d="M 120 188 L 120 212" stroke-width="12" stroke="cyan"></path>
+            <path d="M 120 228 L 120 250" stroke-width="12" stroke="cyan"></path>
+            
+            <text x="1055" y="100" fill="cyan">CROSSING</text>
+            <path d="M 1090 108 L 1090 132" stroke-width="12" stroke="cyan"></path>
+            <path d="M 1090 148 L 1090 172" stroke-width="12" stroke="cyan"></path>
+        </svg>
+
+    </div>
+    <script src="signallingController.js"></script>
+    <script>
+        require('../../renderer.js');
+        signal("1-5", 70, 205, "red", 2);
+        signal("2-5", 70, 165, "red", 2);
+
+        signal(326, 530, 45, "red", 2, 2);
+        signal(328, 530, 85, "red", 2, 2);
+
+        signal(35, 960, 85, "red", 2, 2);
+        signal(36, 810, 115, "red", 1, 2);
+
+        signal(33, 960, 125, "red", 2, 2);
+        signal(34, 810, 155, "red", 1, 2);
+
+        signal(31, 960, 165, "red", 2, 2);
+        signal(32, 680, 195, "red", 1);
+
+        signal(21, 900, 205, "red", 2, 2);
+        signal(22, 760, 235, "red", 1);
+
+        signal(23, 870, 245, "red", 2);
+        signal(24, 760, 275, "red", 1);
+
+        signal(318, 960, 275, "red", 1, 2);
+
+        signal(15, 530, 125, "red", 2);
+        signal(16, 380, 155, "red", 1);
+
+        signal(15, 480, 205, "red", 2);
+        signal(18, 320, 235, "red", 1);
+
+        signal(19, 480, 245, "red", 2);
+        signal(20, 320, 275, "red", 1);
+
+        signal(336, 580, 275, "red", 1);
+
+        signal("2-6", 1110, 155, "red", 1);
+    </script>
+    
+</body>
+</html>

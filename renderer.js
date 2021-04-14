@@ -22,27 +22,35 @@ function httpGet(theUrl)
     } else {
         xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
     }
-    xmlhttp.onreadystatechange=function(){
-        if (xmlhttp.readyState==4 && xmlhttp.status==200){
-            return xmlhttp.responseText;
-        }
-    }
 
     xmlhttp.open("GET", theUrl, false );
-    xmlhttp.send();    
+    xmlhttp.send();
+
+    if (xmlhttp.status==200){
+        return xmlhttp.responseText;
+    }
+
+    return "ERROR 404";
+
 }
 
 if(updateStatusDiv!= null){
     let replyDiv = document.querySelector('#updateStatus');
     ipc.send('aSynMessage','updateStatus');
     ipc.on('asynReply', (event, args) => {
-        var currentVersion = '1.0.0';
+        var currentVersion = httpGet('https://rd.enderice.com/railDispatcher/');
         var replyMsg = '<table class="table table-sm table-borderless"><tr><td>Release Version</td> <td>'+currentVersion+'</td></tr> <tr><td>Program version</td><td>'+args+'</td></tr></table>';
         replyDiv.innerHTML = replyMsg;
     });
 }
 
 if(closeBtn != null || updateBtn != null || startSim != null){
+
+    ipc.send('aSynMessage','updateStatus');
+    ipc.on('asynReply', (event, args) => {
+        var versionDisplay = args;
+        replyDiv.innerHTML = versionDisplay;
+    });
 
     closeBtn.addEventListener('click', () => {
         ipc.send('aSynMessage','close')
@@ -53,6 +61,8 @@ if(closeBtn != null || updateBtn != null || startSim != null){
     startSim.addEventListener('click', () => {
         ipc.send('aSynMessage','startSim')
     });
+    
+    
 
 }
 
@@ -68,7 +78,7 @@ if(updateCloseBtn != null){
     });
 }
 
-if(submitSimBtn != null || closeSimBtn != null || bangkokStn != null || bangsueGrandStnBtn!= null || nakhonPathomStnBtn != null){
+if(submitSimBtn != null || closeSimBtn != null || bangkokStnBtn != null || bangsueGrandStnBtn!= null || nakhonPathomStnBtn != null){
 
     bangkokStnBtn.addEventListener('click', () => {
         ipc.send('aSynMessage','bangkokStn')
@@ -98,3 +108,5 @@ if(submitSimBtn != null || closeSimBtn != null || bangkokStn != null || bangsueG
         replyDiv.innerHTML = args;
     });
 }
+
+

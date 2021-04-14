@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body style="background: rgb(70, 70, 70); ">
+    <div class="container simbox mt-2">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h4 class="mb-3 text-white">List of Simulation - Select simulation</h4>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6 text-left text-white">
+                <div class="list-group">
+                    <button id="bangkokStn" class="list-group-item list-group-item-action">Bangkok Station</button>
+                    <button id="bangsueGrandStn" class="list-group-item list-group-item-action">Bangsue Grand Station</button>
+                    <button id="nakhonPathomStn" class="list-group-item list-group-item-action">Nakhon Pathom Station</button>
+                </div>
+            </div>
+            <div id="dialog" class="col-6 text-white" style="-webkit-app-region: drag;">
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6 text-white text-center">
+               
+            </div>
+            <div class="col-6 text-white text-right">
+                <button id="submitSim" class="btn btn-success" disabled>NEXT</button>
+                <button id="closeSim" class="btn btn-danger">CLOSE</button>
+            </div>
+        </div>
+    </div>  
+    <script>
+        require('../renderer.js');
+    </script>
+</body>
+</html>
+

@@ -163,7 +163,6 @@ ipc.on('aSynMessage', (event, args) => {
 
     case 'updateStatus':
       var version = app.getVersion();
-      console.log(version);
       event.sender.send('asynReply',version);
       break;
     case 'submitSim':

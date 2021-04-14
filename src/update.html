@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body style="background: rgb(102, 101, 101)8); ">
+    <div class="container mt-2">
+        <div class="row">
+            <div class="col-12">
+                <h2 class="text-center">PROGRAM UPDATE</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6 text-center mt-3" style="-webkit-app-region: drag;">
+                <img src="img/update.png" width="75%">
+            </div>
+            <div class="col-6 mt-3">
+                <div id="updateStatus"></div>
+                <button id="updateConnect" class="form-control btn btn-success mb-2 disabled">UPDATE</button>
+                <button id="updateClose" class="form-control btn btn-secondary mt-3">CLOSE</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6 text-white text-center">
+                V. 1.0.0
+            </div>
+        </div>
+    </div>  
+    <script>
+        require('../renderer.js');
+    </script>
+</body>
+</html>
+
+
+
