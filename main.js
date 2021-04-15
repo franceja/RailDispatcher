@@ -101,7 +101,6 @@ function createSimulation(station){
     return win.id;
 }
 
-
 app.on('ready',createWindow)
 
 app.on('window-all-closed', function () {
@@ -158,7 +157,11 @@ ipc.on('aSynMessage', (event, args) => {
     case 'nakhonPathomStn':
       var rand = Math.floor((Math.random() * 1)) + 1;
       event.sender.send('asynReply','<img class="simpics" src="stations/img/nakhonPathom'+rand+'.jpg" width="100%"> This station has been added to this game since April 2021');
-        latestStation = 'nakhonPathom';
+      latestStation = 'nakhonPathom';
+        break;
+    case 'betaSimStn':
+      event.sender.send('asynReply','This station has been added to this game since April 2021 and used as tester');
+      latestStation = 'betaSim';
         break;
 
     case 'updateStatus':
@@ -174,7 +177,7 @@ ipc.on('aSynMessage', (event, args) => {
       console.log(winMapID);
       BrowserWindow.fromId(winMapID).close();
       break;
-      
+
     default:
       break;
   }

@@ -12,8 +12,11 @@ const closeSimBtn = document.getElementById('closeSim');
 const bangkokStnBtn = document.getElementById('bangkokStn');
 const bangsueGrandStnBtn = document.getElementById('bangsueGrandStn');
 const nakhonPathomStnBtn = document.getElementById('nakhonPathomStn');
+const betaSimStnBtn = document.getElementById('betaSimStn');
 
 const closeMapBtn = document.getElementById('closeMap');
+
+
 
 function httpGet(theUrl)
 {
@@ -78,7 +81,7 @@ if(updateCloseBtn != null){
     });
 }
 
-if(submitSimBtn != null || closeSimBtn != null || bangkokStnBtn != null || bangsueGrandStnBtn!= null || nakhonPathomStnBtn != null){
+if(submitSimBtn != null || closeSimBtn != null || bangkokStnBtn != null || bangsueGrandStnBtn!= null || nakhonPathomStnBtn != null || betaSimStnBtn != null){
 
     bangkokStnBtn.addEventListener('click', () => {
         ipc.send('aSynMessage','bangkokStn')
@@ -92,6 +95,11 @@ if(submitSimBtn != null || closeSimBtn != null || bangkokStnBtn != null || bangs
     });
     nakhonPathomStnBtn.addEventListener('click', () => {
         ipc.send('aSynMessage','nakhonPathomStn')
+        submitSimBtn.classList.remove('disabled');
+        submitSimBtn.removeAttribute('disabled');
+    });
+    betaSimStnBtn.addEventListener('click', () => {
+        ipc.send('aSynMessage','betaSimStn')
         submitSimBtn.classList.remove('disabled');
         submitSimBtn.removeAttribute('disabled');
     });
