@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body style="background: rgb(0, 0, 0); " width="100%">
+    <div class="container-fluid mb-2 bg-secondary">
+        <div class="row">
+            <div class="col-4 col-sm-4 col-md-4 col-lg-4 text-left p-0">
+                <button class="btn btn-xl btn-danger">00:00:00</button>
+                <button class="btn btn-xl btn-secondary"></button>
+                
+            </div>
+            <div class="col-4 col-sm-4 col-md-4 col-lg-4 text-center text-white" style="-webkit-app-region: drag;">
+                <h5 class="mt-1">Beta Sim Station</h5>
+            </div>
+            <div class="col-4 col-sm-4 col-md-4 col-lg-4 text-left text-right p-0">
+                <button id="closeMap" class="btn btn-xl btn-danger">CLOSE</button>
+            </div>
+        </div>
+    </div>
+    
+    <div class="container-fluid">
+        <svg id="main" width="1200" height="400" xmlns="https://www.w3.org/2000/svg">
+
+            <path d="M 0 180 L 98 180" stroke-width="8" stroke="grey"></path>
+            <path d="M 0 220 L 98 220" stroke-width="8" stroke="grey"></path>
+            
+            <path stroke-width="8" stroke="grey" d="M 100 180 L 198 180"></path>
+            <path stroke-width="8" stroke="grey" d="M 100 220 L 198 220"></path>
+
+            <path stroke-width="8" stroke="grey" d="M 200 180 L 298 180"></path>
+            <path stroke-width="8" stroke="grey" d="M 200 220 L 298 220"></path>
+
+            <path stroke-width="8" stroke="grey" d="M 300 180 L 398 180"></path>
+            <path stroke-width="8" stroke="grey" d="M 300 220 L 398 220"></path>
+
+            <path stroke-width="8" stroke="grey" d="M 330 220 L 370 180"></path>
+            
+
+            <path stroke-width="8" stroke="grey" d="M 400 180 L 498 180"></path>
+            <path stroke-width="8" stroke="grey" d="M 400 220 L 498 220"></path>
+
+            <path stroke-width="8" stroke="grey" d="M 500 180 L 598 180"></path>
+            <path stroke-width="8" stroke="grey" d="M 500 220 L 598 220"></path>
+
+            <path stroke-width="8" stroke="grey" d="M 600 180 L 698 180"></path>
+            <path stroke-width="8" stroke="grey" d="M 600 220 L 698 220"></path>
+
+            <path stroke-width="8" stroke="grey" d="M 630 180 L 670 220"></path>
+
+            <path stroke-width="8" stroke="grey" d="M 700 180 L 798 180"></path>
+            <path stroke-width="8" stroke="grey" d="M 700 220 L 798 220"></path>
+
+            <path stroke-width="8" stroke="grey" d="M 800 180 L 898 180"></path>
+            <path stroke-width="8" stroke="grey" d="M 800 220 L 898 220"></path>
+            
+
+        </svg>
+
+    </div>
+    <script src="signallingController.js"></script>
+    <script>
+        require('../../renderer.js');
+        signal("01", 270, 165, "red", 2);
+        signal("02", 270, 205, "red", 2);
+
+        signal("03", 570, 165, "red", 2, 2);
+        signal("04", 570, 205, "red", 2, 2);
+
+        signal("05", 410, 196, "red", 1);
+        signal("06", 410, 236, "red", 1, 2);
+
+        signal("07", 720, 196, "red", 1, 2);
+        signal("08", 720, 236, "red", 1, 2);
+
+    </script>
+    
+</body>
+</html>
