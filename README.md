@@ -9,7 +9,7 @@ This app will only work if you have these following programs:
 * Node.js
 
 # Contribution
-* <b>T. Koonruttanasiri</b> - Provide map and measured layout of <i>Nakhon Pathom</i> and its surrounded stations
+* <b>T. Khunruttanasiri</b> - Provide map and measured layout of <i>Nakhon Pathom</i> and its surrounded stations
 * <b>J. Anekpong</b> - Provide and create map and measured layout of <i>Bang Sue Grand Station</i> and its surrounded stations
 
 # License
